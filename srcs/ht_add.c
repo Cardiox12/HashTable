@@ -17,6 +17,7 @@ t_entry *ht_add(t_ht *ht, const char *key, const char *value)
 	
 	char *tmp_value;
 
+    // If slot is already taken, then find the next slot with same key
 	while (entry->next != NULL)
 	{
 		if (strcmp(entry->key, key) == 0)
@@ -33,6 +34,8 @@ t_entry *ht_add(t_ht *ht, const char *key, const char *value)
 		entry = entry->next;
 	}
 
+    // If no slot with the current key has been found
+    // then set the current slot to the current key / value pair
 	entry->next = ht_pair(key, value);
 	
 	return (entry->next);
