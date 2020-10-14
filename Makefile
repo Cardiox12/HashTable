@@ -7,7 +7,8 @@ SRCS		= $(SRC_DIR)/ht_add.c \
 $(SRC_DIR)/ht_create.c \
 $(SRC_DIR)/ht_dump.c \
 $(SRC_DIR)/ht_hash.c \
-$(SRC_DIR)/ht_pair.c
+$(SRC_DIR)/ht_pair.c \
+$(SRC_DIR)/ht_get.c
 
 INC_FILES	= $(INC_DIR)/hashtable.h \
 $(INC_DIR)/ht_internals.h
@@ -19,7 +20,7 @@ NAME		= hashtable
 all: $(NAME)
 
 $(NAME): $(SRCS) $(INC_FILES)
-	@$(CC) -o $(NAME) main.c $(SRCS) -I $(INC_DIR)
+	@$(CC) -g -o $(NAME) main.c $(SRCS) -I $(INC_DIR)
 
 clean:
 	@rm -f $(NAME)

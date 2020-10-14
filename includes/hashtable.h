@@ -22,5 +22,6 @@ typedef struct {
 t_entry *ht_add(t_ht *ht, const char *key, const char *value);
 t_ht	*ht_create(void);
 void	ht_dump(t_ht *ht);
+char    *ht_get(t_ht *ht, const char *key);
 
 #endif
